@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "Module"
 Sub PolaczTekstWJednejKomorce()
 Attribute PolaczTekstWJednejKomorce.VB_ProcData.VB_Invoke_Func = "q\n14"
     Dim komorka As Range
@@ -6,9 +6,9 @@ Attribute PolaczTekstWJednejKomorce.VB_ProcData.VB_Invoke_Func = "q\n14"
     Dim pierwszyZakres As Range
     Dim zakres As Range
 
-    ' Sprawdzenie, czy coœ jest zaznaczone
+    ' Sprawdzenie, czy coï¿½ jest zaznaczone
     If TypeName(Selection) <> "Range" Then
-        MsgBox "Zaznacz komórki z tekstem do po³¹czenia."
+        MsgBox "Zaznacz komï¿½rki z tekstem do poï¿½ï¿½czenia."
         Exit Sub
     End If
 
@@ -17,7 +17,7 @@ Attribute PolaczTekstWJednejKomorce.VB_ProcData.VB_Invoke_Func = "q\n14"
 
     tekstZlaczony = ""
 
-    ' £¹czenie tekstu z wszystkich komórek
+    ' ï¿½ï¿½czenie tekstu z wszystkich komï¿½rek
     For Each komorka In zakres
         If komorka.Value <> "" Then
             tekstZlaczony = tekstZlaczony & komorka.Value & " "
@@ -26,10 +26,10 @@ Attribute PolaczTekstWJednejKomorce.VB_ProcData.VB_Invoke_Func = "q\n14"
 
     tekstZlaczony = Trim(tekstZlaczony)
 
-    ' Wstawienie tekstu do pierwszej komórki
+    ' Wstawienie tekstu do pierwszej komï¿½rki
     pierwszyZakres.Value = tekstZlaczony
 
-    ' Wyczyœæ pozosta³e komórki
+    ' Wyczyï¿½ï¿½ pozostaï¿½e komï¿½rki
     For Each komorka In zakres
         If komorka.Address <> pierwszyZakres.Address Then
             komorka.ClearContents
